@@ -2,11 +2,13 @@ import json
 from http.server import BaseHTTPRequestHandler
 from routing.router import Router
 from adapters.processing_controller import ProcessingController
+from adapters.production_controller import ProductionController
 
 class BaseRequestHandler(BaseHTTPRequestHandler):
   def __init__(self, *args, **kwargs):
     self.router = Router()
     self.router.register_controller(ProcessingController)
+    self.router.register_controller(ProductionController)
     super().__init__(*args, **kwargs)
 
   def do_GET(self):
