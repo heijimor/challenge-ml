@@ -2,6 +2,30 @@
 
 This is a learning project of ML it consists in create an API developed by vanilla python and explore each step such as routings, use cases, ingestions..
 
+By default it follows DDD and hexagonal architecture
+
+```md
+src/
+│
+├── adapters/
+│   ├── __init__.py
+│   └── controllers/
+│       └── user_controller.py
+│
+├── app/
+│   ├── __init__.py
+│   ├── repositories/
+│   │   └── user_repository.py
+│   ├── services/
+│   │   └── external_service.py
+│   ├── usecases/
+│       └── user_usecase.py
+│
+└── domain/
+    ├── __init__.py
+    └── entities/
+```
+
 ## Todos
 
 - [ x ] Create python API and document it by using open api
