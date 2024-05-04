@@ -1,7 +1,7 @@
 import json
 from http.server import BaseHTTPRequestHandler
 from routing.router import Router
-from adapters.ProcessingController import ProcessingController
+from adapters.processing_controller import ProcessingController
 
 class BaseRequestHandler(BaseHTTPRequestHandler):
   def __init__(self, *args, **kwargs):

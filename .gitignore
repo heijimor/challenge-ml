@@ -4,4 +4,6 @@ app/__pycache__
 app/adapters/__pycache__
 app/routing/__pycache__
 app/use_cases/__pycache__
+app/use_cases/**/__pycache__
 app/providers/__pycache__
+app/providers/**/__pycache__

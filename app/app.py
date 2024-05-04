@@ -8,7 +8,6 @@ def run_server():
   print(f'Starting server... {port}')
   httpd.serve_forever()
 
-
 if __name__ == '__main__':
   try: 
     run_server()
