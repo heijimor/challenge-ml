@@ -1,6 +1,6 @@
 import json
 from http.server import BaseHTTPRequestHandler
-from app.modules.routing.router import Router
+from infrastructure.modules.routing.router import Router
 from adapters.controllers.processing.v1.processing_controller import ProcessingController
 from adapters.controllers.production.v1.production_controller import ProductionController
 from adapters.controllers.marketing.v1.marketing_controller import MarketingController

@@ -1,4 +1,4 @@
-from app.modules.converter.converter_adapter_html_to_json import ConverterAdapterHtmlToJson
+from infrastructure.modules.converter.converter_adapter_html_to_json import ConverterAdapterHtmlToJson
 
 class Converter:
   def convert(self, element):

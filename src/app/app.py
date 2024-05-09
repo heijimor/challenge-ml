@@ -1,5 +1,5 @@
 from http.server import HTTPServer
-from app.modules.routing.base_request_handler import BaseRequestHandler
+from infrastructure.modules.routing.base_request_handler import BaseRequestHandler
 
 def run_server():
   port = 8000

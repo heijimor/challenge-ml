@@ -1,6 +1,6 @@
-from app.modules.routing.annotations.route import route
-from app.modules.routing.annotations.get import get
-from app.use_cases.processing.processing import Processing
+from infrastructure.modules.routing.annotations.route import route
+from infrastructure.modules.routing.annotations.get import get
+from app.processing.processing import Processing
 
 @route('/processing')
 class ProcessingController:

@@ -1,6 +1,6 @@
-from app.modules.http.http_client import HttpClient
-from app.modules.extracting.extractor import Extractor
-from app.modules.converter.converter import Converter
+from infrastructure.modules.http.http_client import HttpClient
+from infrastructure.modules.extracting.extractor import Extractor
+from infrastructure.modules.converter.converter import Converter
 
 class Embrapa:
   def get(self, options):

@@ -1,4 +1,4 @@
-from app.use_cases.embrapa import Embrapa
+from infrastructure.external_services.embrapa import Embrapa
 
 class MarketingUsecase:
   def getMarketing(self, options):

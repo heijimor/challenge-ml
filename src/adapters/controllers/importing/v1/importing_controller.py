@@ -1,6 +1,6 @@
-from app.modules.routing.annotations.route import route
-from app.modules.routing.annotations.get import get
-from app.use_cases.importing.importing_usecase import ImportingUsecase
+from infrastructure.modules.routing.annotations.route import route
+from infrastructure.modules.routing.annotations.get import get
+from app.importing.importing_usecase import ImportingUsecase
 
 @route('/importing')
 class ImportingController:
