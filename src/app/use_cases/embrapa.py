@@ -3,12 +3,9 @@ from providers.extracting.extractor import Extractor
 from providers.converter.converter import Converter
 
 class Embrapa:
-  def get(self, opt):
+  def get(self, options):
     http = HttpClient()
-    params = {
-      'opcao': f'opt_{opt}',
-    }
-    # params = {key: value for key, value in params.items() if value}
+    params = {key: value for key, value in options.items() if value}
     response = http.get(f'http://vitibrasil.cnpuv.embrapa.br/index.php', params)
     extractor = Extractor()
     table = extractor.extract(response.text, 'tb_base tb_dados')

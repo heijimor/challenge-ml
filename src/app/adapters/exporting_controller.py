@@ -6,7 +6,6 @@ from use_cases.exporting.exporting_usecase import ExportingUsecase
 class ExportingController:
   @get
   def index(self, requests):
-    print('requests >>>>>>>>>>>>>>>>>>>>>>>>>>>..')
-    print(requests.query_params)
+    options = requests.query_params
     service = ExportingUsecase()
-    return service.getExports()
+    return service.getExports(options)

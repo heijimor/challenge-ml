@@ -1,6 +1,6 @@
 from use_cases.embrapa import Embrapa
 
 class Processing:
-  def getProcessing(self):
+  def getProcessing(self, options):
     embrapa = Embrapa()
-    return embrapa.get('03')
+    return embrapa.get(options)
