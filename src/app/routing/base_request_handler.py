@@ -4,6 +4,7 @@ from routing.router import Router
 from adapters.processing_controller import ProcessingController
 from adapters.production_controller import ProductionController
 from adapters.marketing_controller import MarketingController
+from adapters.importing_controller import ImportingController
 
 class BaseRequestHandler(BaseHTTPRequestHandler):
   def __init__(self, *args, **kwargs):
@@ -11,6 +12,7 @@ class BaseRequestHandler(BaseHTTPRequestHandler):
     self.router.register_controller(ProcessingController)
     self.router.register_controller(ProductionController)
     self.router.register_controller(MarketingController)
+    self.router.register_controller(ImportingController)
     super().__init__(*args, **kwargs)
 
   def do_GET(self):
