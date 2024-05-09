@@ -1,10 +1,10 @@
 .venv
 .vscode
-app/__pycache__
-app/adapters/__pycache__
-app/routing/__pycache__
-app/use_cases/__pycache__
-app/use_cases/**/__pycache__
-app/providers/__pycache__
-app/providers/**/__pycache__
+src/app/__pycache__
+src/app/adapters/__pycache__
+src/app/routing/__pycache__
+src/app/use_cases/__pycache__
+src/app/use_cases/**/__pycache__
+src/app/providers/__pycache__
+src/app/providers/**/__pycache__
 format.sh
