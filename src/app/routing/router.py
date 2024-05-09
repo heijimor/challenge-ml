@@ -1,3 +1,6 @@
+from urllib.parse import urlparse, parse_qs
+from routing.router_request import RouterRequest
+
 class Router:
   def __init__(self):
       self.controllers = {}
@@ -9,12 +12,16 @@ class Router:
       print(f'registering controller.. {controller} by name {name} and path {path}')
 
   def route_request(self, path, method):
-      controller = self.controllers.get(path)
-      print(f'controller found.. {controller} by incoming path {path}')
+      parsed_url = urlparse(path)
+      main_path = parsed_url.path
+      controller = self.controllers.get(main_path)
+      print(f'controller found.. {controller} by incoming path {main_path}')
 
-      if controller and hasattr(controller, 'path') and controller.path == path:
+      if controller and hasattr(controller, 'path') and controller.path == main_path:
           for attr_name in dir(controller):
               attr = getattr(controller, attr_name)
               if hasattr(attr, 'method') and attr.method == method:
-                  return attr()
+                  query_params = parse_qs(parsed_url.query)
+                  requests = RouterRequest(query_params)
+                  return attr(requests)
       return {'error': 'Endpoint not found'}
