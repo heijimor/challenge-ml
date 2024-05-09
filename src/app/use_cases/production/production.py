@@ -1,4 +1,4 @@
-from use_cases.embrapa import Embrapa
+from app.use_cases.embrapa import Embrapa
 
 class Production:
   def getProduction(self, options):

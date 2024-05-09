@@ -1,6 +1,6 @@
-from providers.annotations.route import route
-from providers.annotations.get import get
-from use_cases.exporting.exporting_usecase import ExportingUsecase
+from app.modules.routing.annotations.route import route
+from app.modules.routing.annotations.get import get
+from app.use_cases.exporting.exporting_usecase import ExportingUsecase
 
 @route('/exporting')
 class ExportingController:
