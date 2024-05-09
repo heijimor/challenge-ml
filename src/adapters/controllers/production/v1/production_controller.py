@@ -1,6 +1,6 @@
-from providers.annotations.route import route
-from providers.annotations.get import get
-from use_cases.production.production import Production
+from app.modules.routing.annotations.route import route
+from app.modules.routing.annotations.get import get
+from app.use_cases.production.production import Production
 
 @route('/production')
 class ProductionController:

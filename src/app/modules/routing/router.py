@@ -1,5 +1,5 @@
 from urllib.parse import urlparse, parse_qs
-from routing.router_request import RouterRequest
+from app.modules.routing.router_request import RouterRequest
 
 class Router:
   def __init__(self):

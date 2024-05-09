@@ -1,11 +1,11 @@
 import json
 from http.server import BaseHTTPRequestHandler
-from routing.router import Router
-from adapters.processing_controller import ProcessingController
-from adapters.production_controller import ProductionController
-from adapters.marketing_controller import MarketingController
-from adapters.importing_controller import ImportingController
-from adapters.exporting_controller import ExportingController
+from app.modules.routing.router import Router
+from adapters.controllers.processing.v1.processing_controller import ProcessingController
+from adapters.controllers.production.v1.production_controller import ProductionController
+from adapters.controllers.marketing.v1.marketing_controller import MarketingController
+from adapters.controllers.importing.v1.importing_controller import ImportingController
+from adapters.controllers.exporting.v1.exporting_controller import ExportingController
 
 class BaseRequestHandler(BaseHTTPRequestHandler):
   def __init__(self, *args, **kwargs):
