@@ -8,22 +8,22 @@ By default it follows DDD and hexagonal architecture
 src/
 │
 ├── adapters/
-│   ├── __init__.py
-│   └── controllers/
-│       └── user_controller.py
+│ ├── **init**.py
+│ └── controllers/
+│ └── user_controller.py
 │
 ├── app/
-│   ├── __init__.py
-│   ├── repositories/
-│   │   └── user_repository.py
-│   ├── services/
-│   │   └── external_service.py
-│   ├── usecases/
-│       └── user_usecase.py
+│ ├── **init**.py
+│ ├── repositories/
+│ │ └── user_repository.py
+│ ├── services/
+│ │ └── external_service.py
+│ ├── usecases/
+│ └── user_usecase.py
 │
 └── domain/
-    ├── __init__.py
-    └── entities/
+├── **init**.py
+└── entities/
 ```
 
 ## Todos
@@ -31,3 +31,4 @@ src/
 - [ x ] Create python API and document it by using open api
 - [ ] Design target architecture as a diagram
 - [ ] Make swagger to auto generated (Optional)
+- [ ] Unit tests

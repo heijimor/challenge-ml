@@ -7,3 +7,4 @@ app/use_cases/__pycache__
 app/use_cases/**/__pycache__
 app/providers/__pycache__
 app/providers/**/__pycache__
+format.sh
