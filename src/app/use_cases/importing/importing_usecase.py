@@ -1,6 +1,6 @@
 from use_cases.embrapa import Embrapa
 
 class ImportingUsecase:
-  def getImports(self):
+  def getImports(self, options):
     embrapa = Embrapa()
-    return embrapa.get('05')
+    return embrapa.get(options)

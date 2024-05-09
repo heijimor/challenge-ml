@@ -5,6 +5,7 @@ from use_cases.processing.processing import Processing
 @route('/processing')
 class ProcessingController:
   @get
-  def index(self):
+  def index(self, requests):
+    options = requests.query_params
     service = Processing()
-    return service.getProcessing()
+    return service.getProcessing(options)

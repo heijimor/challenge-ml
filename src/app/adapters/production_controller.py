@@ -5,6 +5,7 @@ from use_cases.production.production import Production
 @route('/production')
 class ProductionController:
   @get
-  def index(self):
+  def index(self, requests):
+    options = requests.query_params
     service = Production()
-    return service.getProduction()
+    return service.getProduction(options)

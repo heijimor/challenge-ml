@@ -1,6 +1,6 @@
 from use_cases.embrapa import Embrapa
 
 class MarketingUsecase:
-  def getMarketing(self):
+  def getMarketing(self, options):
     embrapa = Embrapa()
-    return embrapa.get('04')
+    return embrapa.get(options)

@@ -5,6 +5,7 @@ from use_cases.importing.importing_usecase import ImportingUsecase
 @route('/importing')
 class ImportingController:
   @get
-  def index(self):
+  def index(self, requests):
+    options = requests.query_params
     service = ImportingUsecase()
-    return service.getImports()
+    return service.getImports(options)
