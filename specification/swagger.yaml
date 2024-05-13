@@ -1,0 +1,302 @@
+openapi: 3.0.3
+info:
+  title: Swagger Tech Challenge - OpenAPI 3.0
+  description: |-
+    Service which consumes embrapa data by web scraping and handle it to our system. 
+    `Edit > Load Viticulture OAS 2.0` menu option!_
+
+    Some useful links:
+    - [Embrapa](http://vitibrasil.cnpuv.embrapa.br/)
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: MIT
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:8000/
+tags:
+  - name: production
+    description: resouces of embrapa Viticulture production
+  - name: processing
+    description: resouces of embrapa Viticulture processing
+  - name: marketing
+    description: resouces of embrapa Viticulture marketing
+  - name: importing
+    description: resouces of embrapa Viticulture importing
+  - name: exporting
+    description: resouces of embrapa Viticulture exporting
+
+paths:
+  /production:
+    get:
+      tags:
+        - production
+      summary: Returns Viticulture production registries
+      description: Returns a listing of Viticulture production registries
+      parameters:
+        - in: query
+          name: ano
+          schema:
+            type: integer
+          required: false
+          description: The year of viticulture registries
+          example: 1970
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad request
+        "401":
+          description: Authorization information is missing or invalid.
+        "404":
+          description: A user with the specified ID was not found.
+        "5XX":
+          description: Unexpected error.
+      security:
+        - api_key: []
+
+  /processing:
+    get:
+      tags:
+        - processing
+      summary: Returns Viticulture processing registries
+      description: Returns a listing of Viticulture processing registries
+      parameters:
+        - in: query
+          name: ano
+          schema:
+            type: integer
+          required: false
+          description: The year of viticulture registries
+          example: 1970
+        - in: query
+          name: subopcao
+          schema:
+            type: string
+          required: false
+          description: The subtion option of viticulture registries
+          example: subopt_01
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing or invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        "404":
+          description: A user with the specified ID was not found.
+        "5XX":
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                type: object
+      security:
+        - api_key: []
+
+  /marketing:
+    get:
+      tags:
+        - marketing
+      summary: Returns Viticulture marketing registries
+      description: Returns a listing of Viticulture marketing registries
+      parameters:
+        - in: query
+          name: ano
+          schema:
+            type: integer
+          required: false
+          description: The year of viticulture registries
+          example: 1970
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing or invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        "404":
+          description: A user with the specified ID was not found.
+        "5XX":
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                type: object
+      security:
+        - api_key: []
+
+  /importing:
+    get:
+      tags:
+        - importing
+      summary: Returns Viticulture importing registries
+      description: Returns a listing of Viticulture importing registries
+      parameters:
+        - in: query
+          name: ano
+          schema:
+            type: integer
+          required: false
+          description: The year of viticulture registries
+          example: 1970
+        - in: query
+          name: subopcao
+          schema:
+            type: string
+          required: false
+          description: The subtion option of viticulture registries
+          example: subopt_01
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing or invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        "404":
+          description: A user with the specified ID was not found.
+        "5XX":
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                type: object
+      security:
+        - api_key: []
+
+  /exporting:
+    get:
+      tags:
+        - exporting
+      summary: Returns Viticulture exporting registries
+      description: Returns a listing of Viticulture exporting registries
+      parameters:
+        - in: query
+          name: ano
+          schema:
+            type: integer
+          required: false
+          description: The year of viticulture registries
+          example: 1970
+        - in: query
+          name: subopcao
+          schema:
+            type: string
+          required: false
+          description: The subtion option of viticulture registries
+          example: subopt_01
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Authorization information is missing or invalid.
+          content:
+            application/json:
+              schema:
+                type: object
+        "404":
+          description: A user with the specified ID was not found.
+        "5XX":
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                type: object
+      security:
+        - api_key: []
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        quantity:
+          type: integer
+          format: int32
+          example: 7
+
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+      xml:
+        name: "##default"
+
+  securitySchemes:
+    auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

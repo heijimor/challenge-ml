@@ -26,6 +26,7 @@ class BaseRequestHandler(BaseHTTPRequestHandler):
   def handle_request(self, method):
     self.send_response(200)
     self.send_header('Content-type', 'application/json')
+    self.send_header('Access-Control-Allow-Origin', '*')
     self.end_headers()
     response = self.router.route_request(self.path, method)
     self.wfile.write(json.dumps(response).encode('utf-8'))
