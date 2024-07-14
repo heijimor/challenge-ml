@@ -1,6 +1,6 @@
 from infrastructure.modules.routing.annotations.route import route
 from infrastructure.modules.routing.annotations.get import get
-from app.exporting.exporting_usecase import ExportingUsecase
+from app.embrapa.exporting.exporting_usecase import ExportingUsecase
 
 @route('/exporting')
 class ExportingController:

@@ -1,6 +1,6 @@
 from infrastructure.modules.routing.annotations.route import route
 from infrastructure.modules.routing.annotations.get import get
-from app.processing.processing import Processing
+from app.embrapa.processing.processing import Processing
 
 @route('/processing')
 class ProcessingController:

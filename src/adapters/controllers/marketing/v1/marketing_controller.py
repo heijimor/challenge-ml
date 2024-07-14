@@ -1,6 +1,6 @@
 from infrastructure.modules.routing.annotations.route import route
 from infrastructure.modules.routing.annotations.get import get
-from app.marketing.marketing_usecase import MarketingUsecase
+from app.embrapa.marketing.marketing_usecase import MarketingUsecase
 
 @route('/marketing')
 class MarketingController:

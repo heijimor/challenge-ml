@@ -1,6 +1,6 @@
 from infrastructure.modules.routing.annotations.route import route
 from infrastructure.modules.routing.annotations.get import get
-from app.production.production import Production
+from app.embrapa.production.production import Production
 
 @route('/production')
 class ProductionController:
