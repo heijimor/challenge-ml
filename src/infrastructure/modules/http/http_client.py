@@ -1,10 +1,11 @@
-from requests import get
 import requests
 
+requests.urllib3.disable_warnings()
+
 class HttpClient:
-  def get(self, uri, params):
+  def get(self, uri, params, verify=True):
     try:
-      response = get(uri, params)
+      response = requests.get(uri, params, verify=verify)
       response.raise_for_status()
       return response
     except requests.exceptions.HTTPError as http_error:
