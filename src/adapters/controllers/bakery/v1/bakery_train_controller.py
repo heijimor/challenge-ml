@@ -1,14 +1,11 @@
 from infrastructure.modules.routing.annotations.route import route
 from infrastructure.modules.routing.annotations.get import get
-from app.b3.extracting.extracting_usecase import ExtractingUsecase
-import json
+from app.bakery.bakery_usecase import BakeryUsecase
 
-@route('/bakery/v1')
-class BakeryController:
+@route('/bakery/v1/train')
+class BakeryTrainController:
   @get
   def index(self, requests):
     options = requests.query_params
-    return {
-      "message": "Hello, World!",
-      "status": "success"
-    }
+    bakeryUseCase = BakeryUsecase()
+    return bakeryUseCase.get(options)

@@ -7,7 +7,8 @@ from adapters.controllers.embrapa.marketing.v1.marketing_controller import Marke
 from adapters.controllers.embrapa.importing.v1.importing_controller import ImportingController
 from adapters.controllers.embrapa.exporting.v1.exporting_controller import ExportingController
 from adapters.controllers.b3.extracting.v1.extracting_controller import ExtractingController
-from adapters.controllers.bakery.v1.bakery_controller import BakeryController
+from adapters.controllers.bakery.v1.bakery_extracting_controller import BakeryExtractingController
+from adapters.controllers.bakery.v1.bakery_train_controller import BakeryTrainController
 
 class BaseRequestHandler(BaseHTTPRequestHandler):
   def __init__(self, *args, **kwargs):
@@ -18,7 +19,8 @@ class BaseRequestHandler(BaseHTTPRequestHandler):
     self.router.register_controller(ImportingController)
     self.router.register_controller(ExportingController)
     self.router.register_controller(ExtractingController)
-    self.router.register_controller(BakeryController)
+    self.router.register_controller(BakeryExtractingController)
+    self.router.register_controller(BakeryTrainController)
     super().__init__(*args, **kwargs)
 
   def do_GET(self):
