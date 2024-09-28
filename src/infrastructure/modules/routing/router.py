@@ -1,5 +1,6 @@
 from urllib.parse import urlparse, parse_qs
 from infrastructure.modules.routing.router_request import RouterRequest
+import json 
 
 class Router:
   def __init__(self):
@@ -11,7 +12,7 @@ class Router:
       self.controllers[path] = controller()
       print(f'registering controller.. {controller} by name {name} and path {path}')
 
-  def route_request(self, path, method):
+  def route_request(self, path, method, body=None):
       parsed_url = urlparse(path)
       main_path = parsed_url.path
       controller = self.controllers.get(main_path)
@@ -22,6 +23,14 @@ class Router:
               attr = getattr(controller, attr_name)
               if hasattr(attr, 'method') and attr.method == method:
                   query_params = parse_qs(parsed_url.query)
-                  requests = RouterRequest(query_params)
+
+                  if method == 'POST':
+                    if isinstance(body, str):
+                      try:
+                        body = json.loads(body)  # Parse JSON string to a dictionary
+                      except json.JSONDecodeError:
+                        return {'error': 'Invalid JSON in request body'}
+
+                  requests = RouterRequest(query_params=query_params, body=body)
                   return attr(requests)
       return {'error': 'Endpoint not found'}
