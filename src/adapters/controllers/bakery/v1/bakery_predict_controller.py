@@ -11,4 +11,4 @@ class BakeryPredictController:
     predictUsecase = BakeryPredictUsecase()
     predicted = predictUsecase.predict(requests.body)
     print(predicted)
-    return { "data": "predicted" }
+    return predicted
