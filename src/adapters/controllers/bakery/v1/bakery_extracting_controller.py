@@ -16,6 +16,13 @@ class BakeryExtractingController:
     marketing = mockApi.getMarketingData() 
     orders = mockApi.getOrders()
 
+    # should upload to s3
+    # in s3 should merge this date and simplify into data like this
+    # {
+        # 'gasto_marketing': [10, 15, 20, 25, 30],
+        # 'vendas': [100, 150, 200, 250, 300]
+    # }
+
     return {
         marketing: marketing,
         orders: orders,

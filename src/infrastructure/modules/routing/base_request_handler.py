@@ -9,6 +9,7 @@ from adapters.controllers.embrapa.exporting.v1.exporting_controller import Expor
 from adapters.controllers.b3.extracting.v1.extracting_controller import ExtractingController
 from adapters.controllers.bakery.v1.bakery_extracting_controller import BakeryExtractingController
 from adapters.controllers.bakery.v1.bakery_train_controller import BakeryTrainController
+from adapters.controllers.bakery.v1.bakery_predict_controller import BakeryPredictController
 
 class BaseRequestHandler(BaseHTTPRequestHandler):
   def __init__(self, *args, **kwargs):
@@ -21,6 +22,7 @@ class BaseRequestHandler(BaseHTTPRequestHandler):
     self.router.register_controller(ExtractingController)
     self.router.register_controller(BakeryExtractingController)
     self.router.register_controller(BakeryTrainController)
+    self.router.register_controller(BakeryPredictController)
     super().__init__(*args, **kwargs)
 
   def do_GET(self):
